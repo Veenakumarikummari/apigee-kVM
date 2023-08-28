@@ -120,3 +120,16 @@ jobs:
     # Maven Deploy Apigee Config
       - name: mvn deploy config xhybrid
         run: mvn install -q -Pconfig_de -Dbearer=ya29.a0AfB_byCIbDafXRw_l3CZH8qQZgg4PMiLrBf9QMhYKc2ZJTEf_-c-x9RSIY32rVKn-SSKK7SS6QuJT1mrXW9kCcfZ-mz-yxShD4rfViavML9jX9cOi1YLqXDp96HXNFyCxk1eV8tQvPmWMKJIum0lkTesZuLLsdHUazAxyL6Xq0PZTCBnaCgYKATYSARISFQHsvYlsyPYx8oFbzVKRl8e3IrL6Dw0183 -Dapigee.config.file=ApigeeConfig/apigee.json -Dapigee.config.options=update
+       
+    # Maven Package & Upload Apigee Budle Config in Apigee
+      - name: mvn config
+        run: mvn apigee-enterprise:configure -q -Pproxy_test -Dorg=$APIGEE_ORG -Denv=$APIGEE_ENV
+
+    # Maven Deploy uploaded proxy package in to Apigeee
+      - name: mvn deploy proxy xhybrid
+        run: mvn apigee-enterprise:deploy -q -Pproxy_test -Dbearer=ya29.a0AfB_byCIbDafXRw_l3CZH8qQZgg4PMiLrBf9QMhYKc2ZJTEf_-c-x9RSIY32rVKn-SSKK7SS6QuJT1mrXW9kCcfZ-mz-yxShD4rfViavML9jX9cOi1YLqXDp96HXNFyCxk1eV8tQvPmWMKJIum0lkTesZuLLsdHUazAxyL6Xq0PZTCBnaCgYKATYSARISFQHsvYlsyPYx8oFbzVKRl8e3IrL6Dw0183
+
+    # Maven Deploy Apigee Config
+      - name: mvn deploy config xhybrid
+        run: mvn install -q -Pconfig_test -Dbearer=ya29.a0AfB_byCIbDafXRw_l3CZH8qQZgg4PMiLrBf9QMhYKc2ZJTEf_-c-x9RSIY32rVKn-SSKK7SS6QuJT1mrXW9kCcfZ-mz-yxShD4rfViavML9jX9cOi1YLqXDp96HXNFyCxk1eV8tQvPmWMKJIum0lkTesZuLLsdHUazAxyL6Xq0PZTCBnaCgYKATYSARISFQHsvYlsyPYx8oFbzVKRl8e3IrL6Dw0183 -Dapigee.config.file=ApigeeConfig/apigee.json -Dapigee.config.options=update
+
