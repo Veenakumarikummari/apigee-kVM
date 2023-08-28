@@ -226,7 +226,7 @@
                    ],
                    "name":"apigee__app_cicd",
                    "consumerKey":"apigee_cicd_key",
-                   "consumerSecret":"apigee_12382782"
+                   "consumerSecret":"apigee_12382"
                 }
              ]
         }
