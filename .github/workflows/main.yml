@@ -1,4 +1,4 @@
-name:  Proxy deployment
+name:  kvm deployment
 
 on:
   workflow_dispatch:
