@@ -110,60 +110,7 @@
 					</plugin>
 			<!-- APIGEE DEPLOY -->
 			<!-- copy the full apiproxy folder to target folder -->
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.6</version>
-				<executions>
-					<execution>
-						<id>copy-resources</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<overwrite>true</overwrite>
-							<resources>
-								<resource>
-									<directory>${project.root.dir}</directory>
-									<filtering>true</filtering>
-									<includes>
-										<include>apiproxy/**</include>
-										<include>test/integration/**</include>
-										<include>resources/**</include>
-									</includes>
-								</resource>
-							</resources>
-							<outputDirectory>${target.root.dir}</outputDirectory>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
-                 <!-- Deploy proxy -->
-			 
-			<plugin>
-				<groupId>io.apigee.build-tools.enterprise4g</groupId>
-				<artifactId>apigee-edge-maven-plugin</artifactId>
-				<version>2.4.1</version>
-				<executions>
-					<execution>
-						<id>configure-bundle-step</id>
-						<phase>package</phase>
-						<goals>
-							<goal>configure</goal>
-						</goals>
-					</execution>
-					
-					<execution>
-						<id>deploy-bundle-step</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>deploy</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>  
-
+			
 		 <!--cleaning dirs -->
 			
 			<plugin>
