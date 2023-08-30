@@ -6,29 +6,29 @@
 				{
 					"entry": [
 						{
-							"name": "COMPANY",
-							"value": "example.com"
+							"name": "C",
+							"value": "e"
 						},
 						{
-							"name": "PREFIX",
-							"value": "EXMPL"
+							"name": "PR",
+							"value": "EL"
 						}
 					],
-					"name": "kvm_proxy_1",
+					"name": "test-kvm",
 					"encrypted": true
 				},
 				{
 					"entry": [
 						{
-							"name": "ehy",
-							"value": "example.com"
+							"name": "ey",
+							"value": "e"
 						},
 						{
-							"name": "PREFIX",
-							"value": "EXMPL"
+							"name": "PRIX",
+							"value": "EPL"
 						}
 					],
-					"name": "kvm_proxy_2",
+					"name": "sample-kvm",
 					"encrypted": true
 				}
 			]
