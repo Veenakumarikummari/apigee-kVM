@@ -71,15 +71,19 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2   
 
-
-
-
-  # Deploy Apigee Config (Apigee [Config] Maven plugin)
+ # Deploy Apigee Config (Apigee [Config] Maven plugin)
       
       - name: mvn deploy config
-        run: mvn install -P eval -Dbearer='${{ steps.auth.outputs.access_token }}' -Dapigee.org=${{ github.event.inputs.deployment-region }} -Denv=${{ github.event.inputs.deployment-env}} -Dapigee.config.dir=./ApigeeConfig -Dapigee.config.options=update
+        run: mvn install -Peval -Dbearer='${{ steps.auth.outputs.access_token }}' -Dapigee.org=${{ github.event.inputs.deployment-region }} -Denv=${{ github.event.inputs.deployment-env}} -Dapigee.config.dir=./apiconfig -Dapigee.config.options=update
 
 
- 
+   # Package & Deploy Apigee proxy (Apigee [Deploy] Maven plugin)
+      - name: mvn package
+        run: mvn process-resources -Peval -Dbearer='${{ steps.auth.outputs.access_token }}'
 
-    
+      - name: mvn config
+        run: mvn apigee-enterprise:configure -q -Peval -Dbearer='${{ steps.auth.outputs.access_token }}' -Dapigee.org=${{ github.event.inputs.deployment-region }} -Denv=${{ github.event.inputs.deployment-env}} 
+
+      - name: mvn import proxy
+        if: env.DEPLOYMENT_ACTION == 'import'
+        run: mvn apigee-enterprise:deploy -q -Peval -Dbearer='${{ steps.auth.outputs.access_token }}' -Denv=${{ github.event.inputs.deployment-env}} -Dapigee.org=${{ github.event.inputs.deployment-region}} -Dapigee.options=inactive
