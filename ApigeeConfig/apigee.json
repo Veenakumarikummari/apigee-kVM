@@ -82,6 +82,29 @@
 		"apiProducts": [],
 		"kvms": [],
 		"reports": [],
-		"developers": []
+		"developerApps": {
+			"veenakumari226@gmail.com": [
+				{
+					"name": "veena",
+					"apiProducts": [
+						"EchoProduct"
+					],
+					"callbackUrl": "http://weatherapp.com",
+					"scopes": []
+				}
+			]
+		},
+		"importKeys": {
+			"veenakumari226@gmail.com": [
+				{
+					"apiProducts": [
+						"EchoProduct"
+					],
+					"name": "coolechoapp",
+					"consumerKey": "",
+					"consumerSecret": ""
+				}
+			]
+		}
 	}
 }
