@@ -1,37 +1,15 @@
-{
-	"version": "1.0",
-	"envConfig": {
-		"eval": {
-			"kvms": [
-				{
-					"entry": [
-						{
-							"name": "C",
-							"value": "e"
-						},
-						{
-							"name": "PR",
-							"value": "EL"
-						}
-					],
-					"name": "test-kvm",
-					"encrypted": true
-				},
-				{
-					"entry": [
-						{
-							"name": "ey",
-							"value": "e"
-						},
-						{
-							"name": "PRIX",
-							"value": "EPL"
-						}
-					],
-					"name": "sample-kvm",
-					"encrypted": true
-				}
-			]
-		}
-	}
-}
+[
+    {
+        "entry": [
+            {
+                "name": "COMPANY",
+                "value": "example.com"
+            },
+            {
+                "name": "PREFIX",
+                "value": "EXMPL"
+            }
+        ],
+        "name": "backend_account_config"
+    }
+]
