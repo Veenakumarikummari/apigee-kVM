@@ -19,7 +19,7 @@ on:
         type: choice
         description: Region to deploy
         options: 
-        - centering-river-396816
+        - esi-apigee-x-394004
         - NA
       deployment-action:
         type: choice
@@ -77,7 +77,7 @@ jobs:
   # Deploy Apigee Config (Apigee [Config] Maven plugin)
       
       - name: mvn deploy config
-        run: mvn install -P eval -Dbearer='${{ steps.auth.outputs.access_token }}' -Dapigee.org=${{ github.event.inputs.deployment-region }} -Denv=${{ github.event.inputs.deployment-env}} -Dapigee.config.dir=./apiconfig -Dapigee.config.options=update
+        run: mvn install -P eval -Dbearer='${{ steps.auth.outputs.access_token }}' -Dapigee.org=${{ github.event.inputs.deployment-region }} -Denv=${{ github.event.inputs.deployment-env}} -Dapigee.config.dir=./ApigeeConfig -Dapigee.config.options=update
 
 
  
