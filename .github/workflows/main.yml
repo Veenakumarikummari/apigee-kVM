@@ -3,8 +3,18 @@
 name: Apigee CICD Using Maven
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI or API.
-#on:
-#  workflow_dispatch:
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        description: environment
+        options:
+          - Dev
+          - Test
+          - Uat
+  schedule:
+    - cron: '30 18 * * 1,3'
 
 #beloe command is deploy the code automatically when release version created and code merged  
 #on:
@@ -12,7 +22,7 @@ name: Apigee CICD Using Maven
 #    types: [created]
 
 #beloe command is deploy the code automatically when push the code to specific branch
-on: push
+# on: push
 #branches: [ "release/dev" ]
 
 env:
@@ -120,4 +130,10 @@ jobs:
     # Maven Deploy Apigee Config
       - name: mvn deploy config xhybrid
         run: mvn install -q -Pconfig_de -Dbearer=${{ steps.auth.outputs.access_token }} -Dapigee.config.file=ApigeeConfig/apigee.json -Dapigee.config.options=update
+  test_schedule:
+          runs-on: ubuntu-latest
+          steps:
+          - name: Not on Monday or Wednesday
+            if: github.event.schedule != '30 18 * * 1,3'
+            run: echo "This step will be run on Monday,tuesday and Wednesday"
 
