@@ -38,82 +38,12 @@
 			"keystores": [],
 			"aliases": [],
 			"flowhooks": []
-		},
-		"test": {
-			"targetServers": [],
-			"kvms": [
-				{
-					"entry": [
-						{
-							"name": "COMPANY",
-							"value": "example.com"
-						},
-						{
-							"name": "PREFIX",
-							"value": "EXMPL"
-						}
-					],
-					"name": "kvm_proxy_1",
-					"encrypted": true
-				},
-				{
-					"entry": [
-						{
-							"name": "ehy",
-							"value": "example.com"
-						},
-						{
-							"name": "PREFIX",
-							"value": "EXMPL"
-						}
-					],
-					"name": "kvm_proxy_2",
-					"encrypted": true
-				}
-			],
-			"references": [],
-			"resourcefiles": [],
-			"keystores": [],
-			"aliases": [],
-			"flowhooks": []
 		}
 	},
 	"orgConfig": {
 		"apiProducts": [],
 		"kvms": [],
 		"reports": [],
-		"developers": [
-			{
-				"email": "veenakumari.kummari@easystepin.com",
-				"firstName": "Veena",
-				"lastName": "kummari",
-				"userName": "veenakumari",
-				"attributes": []
-			}
-		],
-		"developerApps": {
-			"veenakumari.kummari@easystepin.com": [
-				{
-					"name": "veena",
-					"apiProducts": [
-						"EchoProduct"
-					],
-					"callbackUrl": "http://weatherapp.com",
-					"scopes": []
-				}
-			]
-		},
-		"importKeys": {
-			"veenakumari.kummari@easystepin.com": [
-				{
-					"apiProducts": [
-						"EchoProduct"
-					],
-					"name": "coolechoapp",
-					"consumerKey": "abcd",
-					"consumerSecret": "xyz123"
-				}
-			]
-		}
+		"developers": []
 	}
 }
