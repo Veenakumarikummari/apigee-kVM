@@ -85,9 +85,9 @@
 		"developerApps": {
 			"veenakumari226@gmail.com": [
 				{
-					"name": "veena",
+					"name": "test",
 					"apiProducts": [
-						"EchoProduct"
+						"Product"
 					],
 					"callbackUrl": "http://weatherapp.com",
 					"scopes": []
