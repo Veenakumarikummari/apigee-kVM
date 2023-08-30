@@ -1,6 +1,6 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when code pushed to specifc branch and deploy to Apigee
 
-name: Apigee CICD Using Maven
+name: Apigee KVM deploy
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI or API.
 on:
@@ -32,7 +32,7 @@ on:
         - deploy
 
 env:
-  DEPLOYMENT_NAME: Apigee CICD Test # TODO: update to deployment name
+  DEPLOYMENT_NAME: Apigee KVM # TODO: update to deployment name
 
   # Default Target Apigee Organization et environment (can be also be dynamically defined in [Set Variables *] steps)
   APIGEE_ORG: ${{ secrets.APIGEE_ORG }} 
@@ -41,7 +41,7 @@ env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
   WORKFLOW_IDENTITY_FEDERATION_NAME: ${{ secrets.WORKFLOW_IDENTITY_FEDERATION_NAME }}
-  AUTHOR_EMAIL: 'pavan.sirasanambedu@gmail.com'
+  AUTHOR_EMAIL: 'veenakumari402@gmail.com'
   APIGEE_DEPLOYMENT_SUFFIX: 'relase_dev'
   APIGEE_BUILD_DEPLOYMENT_SUFFIX: 'apigee_relase_dev'
 
@@ -83,4 +83,4 @@ jobs:
 
     # Maven Deploy Apigee Config
       - name: mvn deploy config
-        run: mvn install -P eval -Dbearer='${{ steps.auth.outputs.access_token }}' -Dapigee.org=${{ github.event.inputs.deployment-region }} -Denv=${{ github.event.inputs.deployment-env}} -Dapigee.config.dir= ./ApigeeConfig/env/eval/Test.json -Dapigee.config.options=update
+        run: mvn install -P eval -Dbearer='${{ steps.auth.outputs.access_token }}' -Dapigee.org=${{ github.event.inputs.deployment-region }} -Denv=${{ github.event.inputs.deployment-env}} -Dapigee.config.dir= ./ApigeeConfig -Dapigee.config.options=update
