@@ -82,12 +82,21 @@
 		"apiProducts": [],
 		"kvms": [],
 		"reports": [],
+		"developers": [
+			{
+				"email": "veenakumari.kummari@easystepin.com",
+				"firstName": "Veena",
+				"lastName": "kummari",
+				"userName": "veenakumari",
+				"attributes": []
+			}
+		],
 		"developerApps": {
-			"veenakumari226@gmail.com": [
+			"veenakumari.kummari@easystepin.com": [
 				{
-					"name": "test",
+					"name": "veena",
 					"apiProducts": [
-						"Product"
+						"EchoProduct"
 					],
 					"callbackUrl": "http://weatherapp.com",
 					"scopes": []
@@ -95,14 +104,14 @@
 			]
 		},
 		"importKeys": {
-			"veenakumari226@gmail.com": [
+			"veenakumari.kummari@easystepin.com": [
 				{
 					"apiProducts": [
 						"EchoProduct"
 					],
 					"name": "coolechoapp",
-					"consumerKey": "",
-					"consumerSecret": ""
+					"consumerKey": "abcd",
+					"consumerSecret": "xyz123"
 				}
 			]
 		}
