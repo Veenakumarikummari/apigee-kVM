@@ -13,6 +13,12 @@ on:
           - Dev
           - Test
           - Uat
+      name: Import or deploy
+      type:  choice
+        description: Who to greet
+        options: 
+        - monalisa
+        - cschleiden
   schedule:
     - cron: '30 18 * * 1,3'
 
@@ -50,47 +56,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-
-   # # Create Dependencies (npm) Cache 
-   #    - name: Cache node modules
-   #      uses: actions/cache@v3
-   #      env:
-   #        cache-name: cache-node-modules
-   #      with:
-   #        # npm cache files are stored in `~/.npm` 
-   #        path: ~/.npm
-   #        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-   #        restore-keys: |
-   #          ${{ runner.os }}-build-${{ env.cache-name }}-
-   #          ${{ runner.os }}-build-
-   #          ${{ runner.os }}-
-
-    # # Install dependencies (npm)
-    #   - name: Install Dependencies
-    #     run: npm install --silent --no-fund
-
-    # # Run apigeeLint test + upload artifact (apigeelint-out.html)
-    #   - name: apigeelint
-    #     run: ./node_modules/apigeelint/cli.js -s ./apiproxy -f html.js -e PO013,PO025 > ./apigeelint-out.html
-
-    #   - name: Archive Apigeelint results
-    #     uses: actions/upload-artifact@v3
-    #     with:
-    #       name: apigeelint-report
-    #       path: ./apigeelint-out.html
-    #       retention-days: 5
-
-  # # Run eslint test + upload artifact (eslint-out.html)
-  #     - name: eslint
-  #       run : ./node_modules/eslint/bin/eslint.js -c ./.eslintrc-jsc.yml --format html ./apiproxy/resources/jsc > ./eslint-out.html
-
-  #     - name: Archive esLint results
-  #       uses: actions/upload-artifact@v3
-  #       with:
-  #         name: eslint-report
-  #         path: ./eslint-out.html
-  #         retention-days: 5
 
     # Setup Maven & Maven Cache
       - name: Set up JDK 1.8
@@ -115,21 +80,11 @@ jobs:
           workload_identity_provider: 'projects/127369686749/locations/global/workloadIdentityPools/github-test/providers/github-test'
           service_account: 'workload-identity-federation@esi-apigee-x-394004.iam.gserviceaccount.com'
 
-    # Maven Package & Upload Apigee proxy
-      - name: mvn package
-        run: mvn process-resources -q -Pproxy_de -Dcommit=$GIT_COMMIT -Dbranch=$GIT_BRANCH -Dauthor=$AUTHOR_EMAIL
 
     # Maven Package & Upload Apigee Budle Config in Apigee
       - name: mvn config
         run: mvn apigee-enterprise:configure -q -Pproxy_de -Dorg=$APIGEE_ORG -Denv=$APIGEE_ENV
-
-    # Maven Deploy uploaded proxy package in to Apigeee
-      - name: mvn deploy proxy xhybrid
-        run: mvn apigee-enterprise:deploy -q -Pproxy_de -Dbearer=${{ steps.auth.outputs.access_token }}
-
-    # Maven Deploy Apigee Config
-      - name: mvn deploy config xhybrid
-        run: mvn install -q -Pconfig_de -Dbearer=${{ steps.auth.outputs.access_token }} -Dapigee.config.file=ApigeeConfig/apigee.json -Dapigee.config.options=update
+        
   test_schedule:
           runs-on: ubuntu-latest
           steps:
