@@ -22,7 +22,7 @@ on:
         type: choice
         description: Region to deploy
         options: 
-        - centering-river-396816
+        - esi-apigee-x-394004
         - NA
       deployment-action:
         type: choice
