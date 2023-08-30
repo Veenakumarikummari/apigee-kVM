@@ -1,0 +1,37 @@
+{
+	"version": "1.0",
+	"envConfig": {
+		"eval": {
+			"kvms": [
+				{
+					"entry": [
+						{
+							"name": "COMPANY",
+							"value": "example.com"
+						},
+						{
+							"name": "PREFIX",
+							"value": "EXMPL"
+						}
+					],
+					"name": "kvm_proxy_1",
+					"encrypted": true
+				},
+				{
+					"entry": [
+						{
+							"name": "ehy",
+							"value": "example.com"
+						},
+						{
+							"name": "PREFIX",
+							"value": "EXMPL"
+						}
+					],
+					"name": "kvm_proxy_2",
+					"encrypted": true
+				}
+			]
+		}
+	}
+}
