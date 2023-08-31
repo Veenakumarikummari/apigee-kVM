@@ -24,6 +24,15 @@ on:
         options: 
         - esi-apigee-x-394004
         - NA
+      deployment-config:
+         type: choice
+         description: Config inputs
+         options: 
+          - keyvaluemaps
+          - apiproducts
+          - developers
+          - importKeys
+
 
 env:
   DEPLOYMENT_NAME: Apigee KVM # TODO: update to deployment name
@@ -78,3 +87,4 @@ jobs:
     # Maven Deploy Apigee Config
       - name: mvn deploy config
         run: mvn install -P eval -Dbearer='${{ steps.auth.outputs.access_token }}' -Dapigee.org=${{ github.event.inputs.deployment-region }} -Denv=${{ github.event.inputs.deployment-env}} -Dapigee.config.dir=./apiconfig -Dapigee.config.options=update
+        
