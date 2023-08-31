@@ -107,7 +107,7 @@
 								</goals>
 							</execution>
 							<execution> 
-								<id>export-config-developers</id>
+								<id>create-config-developers</id>
 								<phase>install</phase>
 								<goals>
 									<goal>exportdevelopers</goal>
