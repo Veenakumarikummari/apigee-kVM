@@ -110,7 +110,7 @@
 								<id>export-config-developers</id>
 								<phase>install</phase>
 								<goals>
-									<goal>developers</goal>
+									<goal>exportdevelopers</goal>
 								</goals>
 							</execution>
 						</executions>
