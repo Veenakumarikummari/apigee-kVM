@@ -110,7 +110,7 @@
 								<id>export-config-developers</id>
 								<phase>install</phase>
 								<goals>
-									<goal>flowhooks</goal>
+									<goal>developers</goal>
 								</goals>
 							</execution>
 						</executions>
