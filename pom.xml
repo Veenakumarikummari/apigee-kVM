@@ -106,13 +106,6 @@
 									<goal>flowhooks</goal>
 								</goals>
 							</execution>
-							<execution> 
-								<id>create-config-developers</id>
-								<phase>install</phase>
-								<goals>
-									<goal>exportdevelopers</goal>
-								</goals>
-							</execution>
 						</executions>
 					</plugin>
 			<!-- APIGEE DEPLOY -->
