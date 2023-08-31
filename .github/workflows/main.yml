@@ -90,5 +90,5 @@ jobs:
         
   # Maven Deploy Apigee Config
       - name: mvn deploy config
-        run: mvn apigee-config:exportdevelopers -Peval -Dapigee.config.exportDir=./apiconfig 
+        run: mvn apigee-config:developers -Peval -Dapigee.config.exportDir=./apiconfig 
         
