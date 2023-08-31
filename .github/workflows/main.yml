@@ -90,5 +90,5 @@ jobs:
         
   # Maven Deploy Apigee Config
       - name: mvn deploy config
-        run: mvn apigee-config:developers -P eval -Dbearer='${{ steps.auth.outputs.access_token }}' -Dapigee.org=${{ github.event.inputs.deployment-region }} -Denv=${{ github.event.inputs.deployment-env}} -Dapigee.config.dir=./apiconfig -Dapigee.config.options=update
+        run: mvn apigee-config:exportdevelopers -Peval -Dapigee.config.exportDir=./apiconfig 
         
