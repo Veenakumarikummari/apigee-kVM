@@ -5,7 +5,7 @@
        "description":"weatherProduct",
        "approvalType":"auto",
        "environments":[
-          "test"
+          "eval"
        ],
        "attributes": [
         {
@@ -78,7 +78,7 @@
         "test"
        ],
        "proxies":[
-          "forecastweatherapi"
+          "apigee-cicd"
        ],
        "quota":"10000",
        "quotaInterval":"1",
