@@ -1,12 +1,25 @@
 {
-    "veenakumari226@gmail.com": [
+    "appId": "9adb4344-63f5-40c8-968c-51a336473443",
+    "callbackUrl": "http://weatherapp.com",
+    "createdAt": "1693592581658",
+    "credentials": [
         {
             "apiProducts": [
-                "weatherProduct"
+                {
+                    "apiproduct": "weatherProduct",
+                    "status": "approved"
+                }
             ],
-            "callbackUrl": "http://weatherapp.com",
-            "name": "hughapp",
-            "scopes": []
+            "consumerKey": "GnXYKdPNxnAGJOSeR32NV1wdXBdCxNOj9F2LHn2plu6Mqbg6",
+            "consumerSecret": "6Wr30X2JASQewXsTA2hsVGWIFFJAps33hobKEqkeU87Fh4MXB4hqkmJXi5KGb82x",
+            "expiresAt": "-1",
+            "issuedAt": "1693592581691",
+            "status": "approved"
         }
-    ]
+    ],
+    "developerId": "36165f59-1d65-4a84-aa6b-b9b01841fddc",
+    "lastModifiedAt": "1693592581658",
+    "name": "app",
+    "status": "approved",
+    "appFamily": "default"
 }
