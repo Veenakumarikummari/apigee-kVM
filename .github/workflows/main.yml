@@ -75,5 +75,5 @@ jobs:
         run: mvn apigee-config:${{ github.event.inputs.deployment-config }} -P eval
           -Dbearer='${{ steps.auth.outputs.access_token }}' -Dapigee.org=${{
           github.event.inputs.deployment-region }} -Denv=${{
-          github.event.inputs.deployment-env}} -Dapigee.config.dir=./apiconfig
+          github.event.inputs.deployment-env}} -Dapigee.config.dir=./apiconfig -Dapigee.app.ignoredeveloperapps=true
           -Dapigee.config.options=update
