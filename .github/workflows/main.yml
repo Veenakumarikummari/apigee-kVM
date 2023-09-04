@@ -25,6 +25,7 @@ on:
         description: Config inputs
         options:
           - keyvaluemaps
+          - flowhooks
           - apiproducts
           - developerapps
           - developers
