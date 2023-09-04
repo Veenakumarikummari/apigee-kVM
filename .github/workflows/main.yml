@@ -71,7 +71,7 @@ jobs:
         run: mvn install -P eval -Dbearer='${{ steps.auth.outputs.access_token }}'
           -Dapigee.org=${{ github.event.inputs.deployment-region }} -Denv=${{
           github.event.inputs.deployment-env}} -Dapigee.config.dir=./security-sharedflow
-          -Dapigee.config.options=async
+          -Dapigee.config.options=update
       # - name: mvn deploy config
       #   # run: mvn apigee-config:${{ github.event.inputs.deployment-config }} -P eval
       #   #   -Dbearer='${{ steps.auth.outputs.access_token }}' -Dapigee.org=${{
