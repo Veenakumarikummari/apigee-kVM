@@ -4,9 +4,9 @@
 	        "apiProducts": [
 	            "weatherProduct1"
 	        ],
-	        "name": "apptest",
-	        "consumerKey": "GnXYKdPNxnAGJOSeR32NV1wdXBdCxNOj9F2LHn2plu6Mqbg6",
-	        "consumerSecret": "6Wr30X2JASQewXsTA2hsVGWIFFJAps33hobKEqkeU87Fh4MXB4hqkmJXi5KGb82x"
+	        "name": "key-test",
+	        "consumerKey": "test",
+	        "consumerSecret": "6Wr30X2JASQewXsTA2htest"
         }
     ]
 }
