@@ -1,12 +1,12 @@
 {
-    "hugh@example.com": [
+    "testexample1@gmail.com": [
         {
 	        "apiProducts": [
 	            "weatherProduct1"
 	        ],
-	        "name": "hughapp",
-	        "consumerKey": "abcd1",
-	        "consumerSecret": "xyz123"
+	        "name": "app",
+	        "consumerKey": "GnXYKdPNxnAGJOSeR32NV1wdXBdCxNOj9F2LHn2plu6Mqbg6",
+	        "consumerSecret": "6Wr30X2JASQewXsTA2hsVGWIFFJAps33hobKEqkeU87Fh4MXB4hqkmJXi5KGb82x"
         }
     ]
 }
