@@ -2,7 +2,7 @@
     "veenakumari226@gmail.com": [
         {
 	        "apiProducts": [
-	            "weatherProduct1"
+	            "weatherProduct-legacy"
 	        ],
 	        "name": "test",
 	        "consumerKey": "test",
