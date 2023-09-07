@@ -75,7 +75,7 @@
           }
        ],
        "environments":[
-        "test"
+        "eval"
        ],
        "proxies":[
           "apigee-cicd"
