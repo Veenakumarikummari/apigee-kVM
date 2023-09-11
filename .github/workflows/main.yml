@@ -1,8 +1,10 @@
 ---
 name: Apigee KVM deploy
 on:
-  workflow_dispatch:
-    inputs:
+    schedule:
+    - cron: '0 0 * * *'
+    workflow_dispatch:
+     inputs:
       deployment-env:
         type: choice
         required: true
